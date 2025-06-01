@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::Layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <section>
+        <div class="card mr-3 ml-3 mb-5">
+            <div class="card-body">
+                <h1 class="text-center">Add Contact</h1>
+
+                <div class="container-fluid mt-1">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            <form th:object="${contact}" method="post" enctype="multipart/form-data" th:action="@{/user/process-contact}">
+    <!-- First Name -->
+    <input type="text" th:field="*{name}" placeholder="Enter First Name" class="form-control" />
+
+    <!-- Second Name -->
+    <input type="text" th:field="*{secondName}" placeholder="Enter Second Name" class="form-control" />
+
+    <!-- Phone -->
+    <input type="number" th:field="*{phone}" placeholder="Enter Phone Number" class="form-control" />
+
+    <!-- Email -->
+    <input type="email" th:field="*{email}" placeholder="Enter Email" class="form-control" />
+
+    <!-- Work -->
+    <input type="text" th:field="*{work}" placeholder="Enter Work" class="form-control" />
+
+    <!-- Description -->
+    <textarea th:field="*{description}" placeholder="Enter Description" class="form-control"></textarea>
+
+    <!-- File Upload -->
+    <div class="custom-file mt-3">
+        <input type="file" name="imageFile" accept="image/*" id="imageFile" class="form-control" />
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-outline-primary mt-3">Save Contact</button>
+</form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>
+</html>

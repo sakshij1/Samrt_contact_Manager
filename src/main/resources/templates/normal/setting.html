@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::Layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>Setting</title>
+</head>
+<body>
+    <section>
+       <div class="card mr-3 ml-3 mb-5">
+            <div class="card-body">
+                <h1 class="text-center">Change Password</h1>
+
+                <div class="container-fluid mt-1">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            <form th:action="@{/user/change-password}"
+                            
+                            method="post" >
+                            
+                            
+
+                            <!--Old Password -->
+                             <div class="input-group mt-2 mb-3">                               
+                                <input required type="password" name="oldPassword" id="oldPassword" placeholder="Old Password" class="form-control"/>
+                             </div>
+                             
+                             <!--New Password -->
+                             <div class="input-group mb-3">                               
+                                <input required type="password" name="newPassword" id="newPassword" placeholder="New Password" class="form-control"/>
+                             </div>
+
+                            
+                             <div class="container text-center"><button type="submit" class="btn btn-success">Submit</button>
+                            <button type="reset" class="btn btn-warning">reset</button></div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <script>
+          $(document).ready(()=>{
+            $(".item").removeClass("active");
+            $("#view-setting").addClass("active");
+          });
+        </script>
+    </section>
+</body>
+</html>
